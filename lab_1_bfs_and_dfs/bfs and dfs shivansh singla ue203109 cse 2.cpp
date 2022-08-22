@@ -20,14 +20,15 @@ void BFS()
     
     queue<int> q;
     q.push(start);
+    visited[start] = true;
     while(q.size()!=0)
     {
         int ver = q.front();q.pop();
-        visited[ver] = true;
         cout<<"father "<<ver<<endl;
         for(auto child:adj[ver])
         {
             if(visited[child]){continue;}
+            visited[child] = true;
             cout<<"non visited child of "<<ver<<" is "<<child<<endl;
             q.push(child);
         }
