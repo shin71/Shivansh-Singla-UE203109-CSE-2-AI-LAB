@@ -22,5 +22,6 @@
 8 12
 
 ### graph visualized
+note - this is the same as given in class
 note - used cs academy graph editor for making this
 <img src = "graph.png">
