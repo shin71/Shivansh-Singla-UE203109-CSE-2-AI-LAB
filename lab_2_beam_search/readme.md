@@ -1,5 +1,6 @@
 # this is beam search implementation by Shivansh Singla UE203109 cse 2
 
+## here the size of queue and graph are already inputted code is ready to run
                         graph1 = {{0, 1, 1, 0, 0, 1, 0, 0, 0, 0}, 
                                 {1, 0, 1, 1, 0, 0, 0, 0, 0, 0}, 
                                 {1, 1, 0, 0, 1, 0, 0, 1, 0, 0}, 
