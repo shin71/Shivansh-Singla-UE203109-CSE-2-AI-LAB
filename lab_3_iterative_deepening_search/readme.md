@@ -1,4 +1,6 @@
-# the programs are interactive only input they require are num of nodes,num of edges and list of edges
+## the programs are interactive only input they require are num of nodes,num of edges and list of edges
+
+## note - nodes are 0 based
 
 ### Input data
 <pre>
