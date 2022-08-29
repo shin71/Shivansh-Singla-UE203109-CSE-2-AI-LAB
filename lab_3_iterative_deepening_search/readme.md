@@ -26,3 +26,22 @@
 note - this is the same as given in class
 note - used cs academy graph editor for making this
 <img src = "graph.png">
+
+## output of iterative_deepening_search
+<pre>
+depth of search here is
+1
+order of processing here is
+0 
+..........
+depth of search here is
+2
+order of processing here is
+0 1 2 3 
+..........
+depth of search here is
+3
+order of processing here is
+0 1 4 5 6 2 7 3 8 
+..........
+</pre>
