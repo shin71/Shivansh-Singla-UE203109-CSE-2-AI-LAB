@@ -15,12 +15,8 @@
 using ll = long long;
 const ll MOD = 1e9 + 7;
 using namespace std;
-void beam(auto &adj,int n,int max_search)
+void beam(auto &adj,int n,int q_size_allowed)
 {
-    int q_size_allowed = max_search;
-    cout<<"the size of queue here is"<<endl;
-    cout<<q_size_allowed<<endl;
-    
     vector<bool> visited(n,false);
     int root = 0;
     queue<int> q;
@@ -32,7 +28,6 @@ void beam(auto &adj,int n,int max_search)
         int node = q.front();
         q.pop();
         
-        int added = 0;
         cout<<node<<" ";
         for(auto child:adj[node])
         {
@@ -41,8 +36,6 @@ void beam(auto &adj,int n,int max_search)
             
             visited[child] = true;
             q.push(child);
-            added++;
-            if(added == max_search){break;}
         }
     }
 
@@ -73,13 +66,13 @@ void soln()
         }
     }
 
-    int max_search  = 3;
-    while(max_search)
+    int q_size_allowed  = (n/2) + 1;
+    while(q_size_allowed>0)
     {
-        cout<<"width of beam "<<max_search<<endl;
-        beam(adj,n,max_search);
+        cout<<"size of queue "<<q_size_allowed<<endl;
+        beam(adj,n,q_size_allowed);
         cout<<endl<<"......."<<endl;
-        max_search--;
+        q_size_allowed-=2;
     }
     
 }
