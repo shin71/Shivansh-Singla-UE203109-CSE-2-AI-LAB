@@ -97,7 +97,7 @@ order of processing here is
 ..........
 </pre>
 
-## Output of Iterative_Deepening_search_with_beam_of_width_depth_at_each_iteration
+## Output of Iterative_Deepening_search_with_beam_of_width_equal_to_depth_at_each_iteration
 <pre>
 depth of search and width here are same and equal to
 1
