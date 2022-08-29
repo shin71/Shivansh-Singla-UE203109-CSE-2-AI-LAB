@@ -25,7 +25,7 @@
 8 12
 </pre>
 ### graph visualized
-note - this is the same as given in class
+note - this is the same as given in class \n
 note - used cs academy graph editor for making this
 <img src = "graph.png">
 
