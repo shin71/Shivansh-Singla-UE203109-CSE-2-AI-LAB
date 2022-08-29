@@ -64,13 +64,13 @@ void soln()
         }
     }
 
-    int q_size_allowed  = 5;
-    while(max_search>0)
+    int q_size_allowed  = n/2;
+    while(q_size_allowed>0)
     {
         cout<<"size of queue "<<q_size_allowed<<endl;
         beam(adj,n,q_size_allowed);
         cout<<endl<<"......."<<endl;
-        max_search-=2;
+        q_size_allowed-=2;
     }
     
 }
