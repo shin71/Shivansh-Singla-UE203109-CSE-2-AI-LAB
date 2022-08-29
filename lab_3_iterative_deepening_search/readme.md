@@ -1,6 +1,7 @@
 # the programs are interactive only input they require are num of nodes,num of edges and list of edges
 
 ### Input data
+<pre>
 13 18
 0 1
 0 2
@@ -20,7 +21,7 @@
 6 11
 7 11
 8 12
-
+</pre>
 ### graph visualized
 note - this is the same as given in class
 note - used cs academy graph editor for making this
