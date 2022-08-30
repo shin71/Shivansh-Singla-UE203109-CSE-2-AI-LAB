@@ -33,9 +33,9 @@ graph2 = [[0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0],
     <th>graph2_beam_search_with_fixed_queue</th>
   </tr>
   <tr>
-       <th><img src="outputs/graph1_beam_search_with_fixed_width.png"</th>
-       <th><img src="outputs/graph1_beam_search_with_fixed_queue.png"</th>
-       <th><img src="outputs/graph2_beam_search_with_fixed_width.png"</th>
-       <th><img src="outputs/graph2_beam_search_with_fixed_queue.png"</th>
+       <th><img src="outputs/graph11.png"</th>
+       <th><img src="outputs/graph12.png"</th>
+       <th><img src="outputs/graph21.png"</th>
+       <th><img src="outputs/graph22.png"</th>
   </tr>     
 </table>
