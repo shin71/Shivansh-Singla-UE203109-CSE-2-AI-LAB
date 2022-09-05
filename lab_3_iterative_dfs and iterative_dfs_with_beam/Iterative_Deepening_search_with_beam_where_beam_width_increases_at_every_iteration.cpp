@@ -23,7 +23,7 @@ void iterative_deepening_search(auto &adj,int u,int depth,auto &visited,int widt
     for(auto child:adj[u])
     {
         if(visited[child]){continue;}
-        iterative_deepening_search(adj,child,depth - 1,visited,width);
+        iterative_deepening_search(adj,child,depth - 1,visited,width+1);
         travelled++;
         if(travelled == width)
         {
@@ -45,13 +45,13 @@ void soln()
         adj[v].push_back(u);
     }
     
-    for(int depth = 1,width;depth<=3;depth++,width++)
+    for(int depth = 1;depth<=3;depth++)
     {
-        cout<<"depth of search and width here are same and equal to"<<endl;
-        cout<<depth <<endl;
+        cout<<"depth of search and starting width here are equal to"<<endl;
+        cout<<depth <<" 1"<<endl;
         cout<<"order of processing here is"<<endl;
         vector<bool> visited(n,false);
-        iterative_deepening_search(adj,0,depth,visited,width);
+        iterative_deepening_search(adj,0,depth,visited,1);
         cout<<endl<<".........."<<endl;
     }
   
