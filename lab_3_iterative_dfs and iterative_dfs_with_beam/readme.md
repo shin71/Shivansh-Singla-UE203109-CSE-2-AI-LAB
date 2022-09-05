@@ -99,19 +99,19 @@ order of processing here is
 
 ## Output of Iterative_Deepening_search_with_beam_where_beam_width_increases_at_every_iteration
 <pre>
-depth of search and width here are same and equal to
-1
+depth of search and starting width here are equal to
+1 1
 order of processing here is
 0 
 ..........
-depth of search and width here are same and equal to
-2
+depth of search and starting width here are equal to
+2 1
 order of processing here is
 0 1 
 ..........
-depth of search and width here are same and equal to
-3
+depth of search and starting width here are equal to
+3 1
 order of processing here is
-0 1 4 5 2 6 7 
+0 1 4 5 
 ..........
 </pre>
