@@ -10,7 +10,7 @@
 ### shortcoming and fix
 <ul>
   <li> <b>Algorithm only determines if there is one index which results in users win but fails to include the case where there may be 2 indexes resulting in a win</b>
-  <li> <b>we will also test every non empty index where putting cross by opponent may result in 2 winning indexes
+  <li> <b>we will also test every non empty index where putting cross by opponent may result in 2 winning indexes</b>
 </ul>
 
 ### a sample run of tictactoe_game_program.cpp
