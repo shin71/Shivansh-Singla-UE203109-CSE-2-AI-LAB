@@ -6,6 +6,9 @@
   <li> <b>go function is within the computer move there is no need for a separate function just for putting values</b> 
   <li> <b> poss_win takes the character value 3 for cross or 5 for circle to find any index which results in the win for that character</b>
 </ul>
+### shortcoming
+<ul>
+  <li> <b>Algorithm only determines if there is one index which results in users win but fails to include the case where there may be 2 indexes resulting in a win</b>
 
 ### a sample run of tictactoe_game_program.cpp
 <pre>
