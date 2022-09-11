@@ -4,6 +4,7 @@
   <li> <b>In my implementation computer is always playing A circle whether it starts first or second</b>
 
   <li> <b>go function is within the computer move there is no need for a separate function just for putting values</b> 
+  <li> <b> poss_win takes the character value 3 for cross or 5 for circle to find any index which results in the win for that character</b>
 </ul>
 
 ### a sample run
