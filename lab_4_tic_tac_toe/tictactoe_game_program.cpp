@@ -148,6 +148,7 @@ void soln()
             return;
         }
     }
+    print_board();
     cout<<"it is a draw"<<endl;
 }
 
