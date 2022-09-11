@@ -37,5 +37,8 @@ O O X
 X O X 
 enter your move here with 1 based indexing
 1
+X X O 
+O O X 
+X O X 
 it is a draw
 </pre>
