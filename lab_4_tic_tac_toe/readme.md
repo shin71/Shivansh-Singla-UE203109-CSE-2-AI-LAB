@@ -5,6 +5,7 @@
 
   <li> <b>go function is within the computer move there is no need for a separate function just for putting values</b> 
 </ul>
+
 ### a sample run
 <pre>
 computer will always play circle
