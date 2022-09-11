@@ -7,9 +7,10 @@
   <li> <b> poss_win takes the character value 3 for cross or 5 for circle to find any index which results in the win for that character</b>
 </ul>
 
-### shortcoming
+### shortcoming and fix
 <ul>
   <li> <b>Algorithm only determines if there is one index which results in users win but fails to include the case where there may be 2 indexes resulting in a win</b>
+  <li> <b>we will also test every non empty index where putting cross by opponent may result in 2 winning indexes
 </ul>
 
 ### a sample run of tictactoe_game_program.cpp
