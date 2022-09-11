@@ -10,7 +10,7 @@
 ### shortcoming and fix
 <ul>
   <li> <b>Algorithm only determines if there is one index which results in users win but fails to include the case where there may be 2 indexes resulting in a win</b>
-  <li> <b>we will also test every non empty index where putting cross by opponent may result in 2 winning indexes this is only possible if user has turn 5 or more so we will have to check turn 4 for such a condition</b>
+  <li> <b>we will also test every non empty index where putting cross by opponent may result in 2 winning indexes this is only possible if user has turn 5 or more so we will have to check at turn 4 or more for such a condition</b>
 </ul>
 
 ### notes on modified implementation tictactoe_game_program_with_modification_for_never_losing.cpp
