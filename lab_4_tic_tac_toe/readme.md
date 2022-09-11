@@ -11,19 +11,31 @@
 <pre>
 computer will always play circle
 Enter 0 if you want to play first else enter 1
-1
-O _ _ 
+0
+_ _ _ 
 _ _ _ 
 _ _ _ 
 enter your move here with 1 based indexing
-8
-O _ _ 
+2
+_ X _ 
+_ O _ 
 _ _ _ 
+enter your move here with 1 based indexing
+9
+_ X _ 
+O O _ 
+_ _ X 
+enter your move here with 1 based indexing
+6
 _ X O 
+O O X 
+_ _ X 
 enter your move here with 1 based indexing
 7
-computer won
-O _ _ 
-_ O _ 
-X X O 
+_ X O 
+O O X 
+X O X 
+enter your move here with 1 based indexing
+1
+it is a draw
 </pre>
