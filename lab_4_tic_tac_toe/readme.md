@@ -7,7 +7,7 @@
   <li> <b> poss_win takes the character value 3 for cross or 5 for circle to find any index which results in the win for that character</b>
 </ul>
 
-### a sample run
+### a sample run of tictactoe_game_program.cpp
 <pre>
 computer will always play circle
 Enter 0 if you want to play first else enter 1
@@ -41,4 +41,35 @@ X X O
 O O X 
 X O X 
 it is a draw
+</pre>
+
+### a sample run of tictactoe_game_program.cpp where i win to determine shortcomings in algorithm
+<pre>
+computer will always play circle
+Enter 0 if you want to play first else enter 1
+0
+_ _ _ 
+_ _ _ 
+_ _ _ 
+enter your move here with 1 based indexing
+4
+_ _ _ 
+X O _ 
+_ _ _ 
+enter your move here with 1 based indexing
+8
+_ O _ 
+X O _ 
+_ X _ 
+enter your move here with 1 based indexing
+7
+_ O _ 
+X O O 
+X X _ 
+enter your move here with 1 based indexing
+9
+you won
+_ O _ 
+X O O 
+X X X 
 </pre>
