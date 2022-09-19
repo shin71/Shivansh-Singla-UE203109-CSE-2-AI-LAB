@@ -5,6 +5,13 @@
 <li>To check for a win we will run a 3rd order nested loop if any 3 moves made by a player sum upto 15 that means winner</li>
 <li>poss_win() -> to check for a winning position we will try moves which have empty spaces and if they result in a win we will place computer's circle there</li>
 <li>poss_num_of_wins() -> used to detect places where putting a cross will lead to 2 winning indexes meaning it will be impossible to block such a win</li>
+<li> 
+ <pre>
+  example of 2 winning indexes
+  _ _ _
+  x o o
+  x x _
+  </pre>
 </ul>
 
 # A test run
