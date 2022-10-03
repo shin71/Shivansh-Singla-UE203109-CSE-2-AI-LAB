@@ -3,6 +3,11 @@ Shivansh singla
 Ue203109
 CSE 2
 </pre>
+<ul>
+<li> Check win gives us the score 10 if the computer aka maximizer wins that is reaches a +10 leaf node</li>
+<li> Check win gives us the score -10 if the user aka minimizer wins that is reaches a -10 leaf node</li>
+<li> Check win returns 0 if no one wins or we finish early before reaching any depth node </li>
+</ul>
 
 ## dry runs at depth 1 to 4 on input 6 8 3 1 if possible
 depth = 1<br>
