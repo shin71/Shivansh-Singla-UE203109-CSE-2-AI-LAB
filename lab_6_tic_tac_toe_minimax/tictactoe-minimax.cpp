@@ -54,7 +54,7 @@ int check_win()
     if(z1 == 125 || z2 == 125){return 10;}
     return 0;
 }
-int eval(bool maximizer,int depth)
+int minimax(bool maximizer,int depth)
 {
     bool con = true;
     for(int i=0;i<=8;i++)
@@ -74,7 +74,7 @@ int eval(bool maximizer,int depth)
         {
             if(board[i]!=2){continue;}
             board[i]  = 5;
-            score = max(score,eval(false,depth - 1));
+            score = max(score,minimax(false,depth - 1));
             board[i] = 2;
         }
         return score;
@@ -86,7 +86,7 @@ int eval(bool maximizer,int depth)
         {
             if(board[i]!=2){continue;}
             board[i]  = 3;
-            score = min(score,eval(true,depth - 1));
+            score = min(score,minimax(true,depth - 1));
             board[i] = 2;
         }
         return score;
@@ -101,7 +101,7 @@ void comp_move(int depth)
     {
         if(board[i] != 2){continue;}
         board[i] = 5;
-        int score = eval(false,depth - 1);
+        int score = minimax(false,depth - 1);
         board[i] = 2;
         if(score == 10)
         {
