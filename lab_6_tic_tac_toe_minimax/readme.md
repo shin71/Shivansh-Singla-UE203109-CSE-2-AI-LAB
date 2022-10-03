@@ -4,35 +4,6 @@ Ue203109
 CSE 2
 </pre>
 
-## a run to show how shallow search is at depth 1
-
-<pre>
-enter depth
-1
-computer will always play circle
-Enter 0 if you want to play first else enter 1
-1
-_ _ _ 
-_ _ _ 
-_ _ O 
-enter your move here with 1 based indexing
-1
-X _ _ 
-_ _ _ 
-_ O O 
-enter your move here with 1 based indexing
-7
-X _ _ 
-_ _ O 
-X O O 
-enter your move here with 1 based indexing
-4
-you won
-X _ _ 
-X _ O 
-X O O 
-</pre>
-
 ## dry runs at depth 1 to 4 on input 6 8 1 3 if possible
 6 8 3 1 2 and user wins
 <pre>
