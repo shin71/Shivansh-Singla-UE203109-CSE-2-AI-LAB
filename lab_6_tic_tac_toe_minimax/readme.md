@@ -4,7 +4,7 @@ Ue203109
 CSE 2
 </pre>
 
-## dry runs at depth 1 to 4 on input 6 8 1 3 if possible
+## dry runs at depth 1 to 4 on input 6 8 3 1 if possible
 6 8 3 1 2 and user wins
 <pre>
 enter depth
