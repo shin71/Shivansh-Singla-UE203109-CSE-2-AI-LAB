@@ -5,6 +5,7 @@ CSE 2
 </pre>
 
 ## dry runs at depth 1 to 4 on input 6 8 3 1 if possible
+depth = 1
 6 8 3 1 2 and user wins
 <pre>
 enter depth
@@ -42,6 +43,7 @@ X X X
 O O X 
 O X O 
 </pre>
+depth=2
 6 8 3 1 4 and it is a draw
 <pre>
 enter depth
@@ -79,6 +81,7 @@ X O X
 O X O 
 it is a draw
 </pre>
+depth=3
 6 8 3 4 (4 because 1 wasn't possible) and computer won
 <pre>
 enter depth
@@ -111,6 +114,7 @@ O _ X
 X O X 
 O X O 
 </pre>
+depth=4
 6 8 3 and computer won
 <pre>
 enter depth
