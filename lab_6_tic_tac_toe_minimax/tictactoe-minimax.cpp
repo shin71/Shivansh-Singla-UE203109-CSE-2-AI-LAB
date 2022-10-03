@@ -64,7 +64,7 @@ int minimax(bool maximizer,int depth)
         break;
     }
     if(con || depth==0)
-    {   //this means leaf node
+    {   //this means leaf node or we reached our max depth allowed
         return check_win();
     }
     if(maximizer)
@@ -116,15 +116,20 @@ void comp_move(int depth)
 
 void soln()
 {
+    cout<<"enter depth"<<endl;
+    int depth;
+    cin>>depth;
+    
     cout<<"computer will always play circle"<<endl;
     cout<<"Enter 0 if you want to play first else enter 1"<<endl;
     int start;
     cin>>start;
+    
     for(int turn = 1;turn<=9;turn++)
     {
         if(turn%2 == start)
         {
-            comp_move();
+            comp_move(depth);
         }
         else
         {
