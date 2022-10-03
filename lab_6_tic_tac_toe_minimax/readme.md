@@ -4,9 +4,11 @@ Ue203109
 CSE 2
 </pre>
 
-## some dry runs
+## a run to show how shallow search is at depth 1
 
 <pre>
+enter depth
+1
 computer will always play circle
 Enter 0 if you want to play first else enter 1
 1
@@ -17,21 +19,25 @@ enter your move here with 1 based indexing
 1
 X _ _ 
 _ _ _ 
-O _ O 
+_ O O 
 enter your move here with 1 based indexing
-2
-X X O 
-_ _ _ 
-O _ O 
+7
+X _ _ 
+_ _ O 
+X O O 
 enter your move here with 1 based indexing
 4
-computer won
-X X O 
-X O _ 
-O _ O 
+you won
+X _ _ 
+X _ O 
+X O O 
 </pre>
 
+## dry runs at depth 1 to 4 on input 6 8 1 3 if possible
+6 8 3 1 2 and user wins
 <pre>
+enter depth
+1
 computer will always play circle
 Enter 0 if you want to play first else enter 1
 0
@@ -39,29 +45,126 @@ _ _ _
 _ _ _ 
 _ _ _ 
 enter your move here with 1 based indexing
-5
-O _ _ 
-_ X _ 
+6
 _ _ _ 
+_ _ X 
+_ _ O 
+enter your move here with 1 based indexing
+8
+_ _ _ 
+_ _ X 
+O X O 
+enter your move here with 1 based indexing
+3
+_ _ X 
+_ O X 
+O X O 
+enter your move here with 1 based indexing
+1
+X _ X 
+O O X 
+O X O 
 enter your move here with 1 based indexing
 2
-O X _ 
-_ X _ 
-_ O _ 
-enter your move here with 1 based indexing
-7
+you won
+X X X 
+O O X 
 O X O 
-_ X _ 
-X O _ 
+</pre>
+6 8 3 1 4 and it is a draw
+<pre>
+enter depth
+2
+computer will always play circle
+Enter 0 if you want to play first else enter 1
+0
+_ _ _ 
+_ _ _ 
+_ _ _ 
 enter your move here with 1 based indexing
-9
+6
+_ _ _ 
+_ _ X 
+_ _ O 
+enter your move here with 1 based indexing
+8
+_ _ _ 
+_ _ X 
 O X O 
-_ X O 
+enter your move here with 1 based indexing
+3
+_ _ X 
+_ O X 
+O X O 
+enter your move here with 1 based indexing
+1
 X O X 
+_ O X 
+O X O 
 enter your move here with 1 based indexing
 4
-O X O 
-X X O 
 X O X 
+X O X 
+O X O 
 it is a draw
 </pre>
+6 8 3 4 (4 because 1 wasn't possible) and computer won
+<pre>
+enter depth
+3
+computer will always play circle
+Enter 0 if you want to play first else enter 1
+0
+_ _ _ 
+_ _ _ 
+_ _ _ 
+enter your move here with 1 based indexing
+6
+_ _ _ 
+_ _ X 
+_ _ O 
+enter your move here with 1 based indexing
+8
+_ _ _ 
+_ _ X 
+O X O 
+enter your move here with 1 based indexing
+3
+O _ X 
+_ _ X 
+O X O 
+enter your move here with 1 based indexing
+4
+computer won
+O _ X 
+X O X 
+O X O 
+</pre>
+6 8 3 and computer won
+<pre>
+enter depth
+4
+computer will always play circle
+Enter 0 if you want to play first else enter 1
+0
+_ _ _ 
+_ _ _ 
+_ _ _ 
+enter your move here with 1 based indexing
+6
+_ _ _ 
+_ _ X 
+_ _ O 
+enter your move here with 1 based indexing
+8
+_ _ _ 
+_ O X 
+_ X O 
+enter your move here with 1 based indexing
+3
+computer won
+O _ X 
+_ O X 
+_ X O 
+</pre>
+
