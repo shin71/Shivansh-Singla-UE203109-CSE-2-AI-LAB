@@ -38,7 +38,7 @@ void user_move()
     cin>>position;
     board[position-1] = 3;
 }
-int check_win()
+int rating()
 {
     for(int i=0;i<3;i++)
     {
@@ -65,7 +65,7 @@ int minimax(bool maximizer,int depth)
     }
     if(con || depth==0)
     {   //this means leaf node or we reached our max depth allowed
-        return check_win();
+        return rating();
     }
     if(maximizer)
     {
@@ -135,9 +135,9 @@ void soln()
         {
             user_move();
         }
-        if(check_win() == -10){cout<<"you won"<<endl;}
-        if(check_win() == 10){cout<<"computer won"<<endl;}
-        if(check_win() != 0)
+        if(rating() == -10){cout<<"you won"<<endl;}
+        if(rating() == 10){cout<<"computer won"<<endl;}
+        if(rating() != 0)
         {
             print_board();
             return;
