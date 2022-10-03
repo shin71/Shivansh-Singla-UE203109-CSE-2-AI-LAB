@@ -54,7 +54,7 @@ int check_win()
     if(z1 == 125 || z2 == 125){return 10;}
     return 0;
 }
-int eval(bool maximizer)
+int eval(bool maximizer,int depth)
 {
     bool con = true;
     for(int i=0;i<=8;i++)
@@ -63,11 +63,10 @@ int eval(bool maximizer)
         con = false;
         break;
     }
-    if(con)
+    if(con || depth==0)
     {   //this means leaf node
         return check_win();
     }
-    
     if(maximizer)
     {
         int score = -10;
@@ -75,7 +74,7 @@ int eval(bool maximizer)
         {
             if(board[i]!=2){continue;}
             board[i]  = 5;
-            score = max(score,eval(false));
+            score = max(score,eval(false,depth - 1));
             board[i] = 2;
         }
         return score;
@@ -87,7 +86,7 @@ int eval(bool maximizer)
         {
             if(board[i]!=2){continue;}
             board[i]  = 3;
-            score = min(score,eval(true));
+            score = min(score,eval(true,depth - 1));
             board[i] = 2;
         }
         return score;
@@ -95,14 +94,14 @@ int eval(bool maximizer)
 
 }
 
-void comp_move()
+void comp_move(int depth)
 {
     int op = -1;
     for(int i=0;i<=8;i++)
     {
         if(board[i] != 2){continue;}
         board[i] = 5;
-        int score = eval(false);
+        int score = eval(false,depth - 1);
         board[i] = 2;
         if(score == 10)
         {
