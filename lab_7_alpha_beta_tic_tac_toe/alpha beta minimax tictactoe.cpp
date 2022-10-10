@@ -121,9 +121,9 @@ void comp_move(int depth,bool alpha_beta_pruning)
 
 void soln()
 {
-    bool alpha_beta_pruning = false;
+    bool alpha_beta_pruning = false;int in=0;
     cout<<"do you want alpha beta pruning enter 1 for yes"<<endl;
-    cin>>alpha_beta_pruning;
+    cin>>in;if(in==1){alpha_beta_pruning = true;}
     cout<<"enter depth"<<endl;
     int depth;
     cin>>depth;
