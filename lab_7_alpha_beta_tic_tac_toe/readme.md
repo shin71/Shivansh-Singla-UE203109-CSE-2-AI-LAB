@@ -17,7 +17,7 @@ CSE 2
 ## input move sequence - 1 2 7 6 8
 ## depth - 100
 
-### naive minimax calls -> 6765
+### naive minimax calls -> 111628
 
 <pre>
 do you want alpha beta pruning enter 1 for yes
@@ -57,7 +57,7 @@ O O X
 X X O 
 it is a draw
 calls to minimax function(inclusive of comp_move)
-6765
+111628
 </pre>
 
 ### alpha_beta_pruning minimax calls -> 6765
