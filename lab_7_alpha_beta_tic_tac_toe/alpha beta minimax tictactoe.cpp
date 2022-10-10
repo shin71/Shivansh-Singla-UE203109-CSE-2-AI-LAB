@@ -78,7 +78,7 @@ int minimax(bool maximizer,int depth,bool alpha_beta_pruning)
             board[i]  = 5;
             score = max(score,minimax(false,depth - 1,alpha_beta_pruning));
             board[i] = 2;
-            if(score == 10){return score;}
+            if(score == 10 && alpha_beta_pruning){return score;}
         }
         return score;
     }
@@ -91,7 +91,7 @@ int minimax(bool maximizer,int depth,bool alpha_beta_pruning)
             board[i]  = 3;
             score = min(score,minimax(true,depth - 1,alpha_beta_pruning));
             board[i] = 2;
-            if(score == -10){return score;}
+            if(score == -10 && alpha_beta_pruning){return score;}
         }
         return score;
     }
