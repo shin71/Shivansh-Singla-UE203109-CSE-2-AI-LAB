@@ -102,20 +102,18 @@ void comp_move(int depth,bool alpha_beta_pruning)
 {
     calls++;
     int op = -1;
-    bool already10 = false;
     for(int i=0;i<=8;i++)
     {
         if(board[i] != 2){continue;}
         board[i] = 5;
         int score = minimax(false,depth - 1,alpha_beta_pruning);
         board[i] = 2;
-        if(score == 10 && alpha_beta_pruning)
+        if(score == 10)
         {
             board[i] = 5;
             return;
         }
-        if(score == 10 && !already10){op = i;already10=true;}
-        else if(score == 0 && !already10){op = i;}
+        if(score == 0){op = i;}
         else if(score == -10 && op==-1){op  = i;}
     }
     board[op] = 5; 
