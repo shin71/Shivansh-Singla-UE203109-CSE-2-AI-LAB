@@ -11,12 +11,78 @@
 ## input move sequence - 6 8 9 2
 ## depth - 100
 
-### naive minimax calls -> 109966
+### naive minimax calls -> 21362
 
 <pre>
+do you want alpha beta pruning enter 1 for yes
+0
+enter depth
+100
+computer will always play circle
+Enter 0 if you want to play first else enter 1
+0
+_ _ _ 
+_ _ _ 
+_ _ _ 
+enter your move here with 1 based indexing
+6
+_ _ _ 
+_ O X 
+_ _ _ 
+enter your move here with 1 based indexing
+8
+O _ _ 
+_ O X 
+_ X _ 
+enter your move here with 1 based indexing
+9
+O _ O 
+_ O X 
+_ X X 
+enter your move here with 1 based indexing
+2
+computer won
+O X O 
+_ O X 
+O X X 
+calls to minimax function(inclusive of comp_move)
+21362
 </pre>
 
 ### alpha_beta_pruning minimax calls -> 20697
 
 <pre>
+do you want alpha beta pruning enter 1 for yes
+1
+enter depth
+100
+computer will always play circle
+Enter 0 if you want to play first else enter 1
+0
+_ _ _ 
+_ _ _ 
+_ _ _ 
+enter your move here with 1 based indexing
+6
+_ _ _ 
+_ O X 
+_ _ _ 
+enter your move here with 1 based indexing
+8
+O _ _ 
+_ O X 
+_ X _ 
+enter your move here with 1 based indexing
+9
+O _ O 
+_ O X 
+_ X X 
+enter your move here with 1 based indexing
+2
+computer won
+O X O 
+_ O X 
+O X X 
+calls to minimax function(inclusive of comp_move)
+20697
 </pre>
