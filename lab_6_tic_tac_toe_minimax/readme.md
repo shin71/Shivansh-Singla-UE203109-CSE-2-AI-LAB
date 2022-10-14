@@ -11,7 +11,7 @@ CSE 2
 
 ## dry runs at depth 1 to 4 on input 6 8 3 1 if possible
 depth = 1<br>
-6 8 3 1 2 and user wins
+6 8 3 1 4 and draw
 <pre>
 enter depth
 1
@@ -38,15 +38,15 @@ _ O X
 O X O 
 enter your move here with 1 based indexing
 1
-X _ X 
-O O X 
+X O X 
+_ O X 
 O X O 
 enter your move here with 1 based indexing
-2
-you won
-X X X 
-O O X 
+4
+X O X 
+X O X 
 O X O 
+it is a draw 
 </pre>
 depth=2<br>
 6 8 3 1 4 and it is a draw
