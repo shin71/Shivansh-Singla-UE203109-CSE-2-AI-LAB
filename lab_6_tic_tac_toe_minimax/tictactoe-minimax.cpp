@@ -38,6 +38,24 @@ void user_move()
     cin>>position;
     board[position-1] = 3;
 }
+int poss_win()
+{
+    int val1 = 5*5*2;
+    int val2 = 3*3*2;
+    for(int i=0;i<3;i++)
+    {
+        int x = board[i*3] * board[i*3 + 1] * board[i*3 + 2];
+        int y = board[i] * board[i + 3] * board[i + 6];
+        if(x==val1 || y==val1){return +8;}
+        if(x==val2 || y==val2){return -8;}
+
+    }
+    int z1 = board[4]*board[0]*board[8];
+    int z2 = board[4]*board[2]*board[6];
+    if(z1==val1 || z2==val1){return +8;}
+    if(z1==val2 || z2==val2){return -8;}
+    return 0;
+}
 int rating()
 {
     for(int i=0;i<3;i++)
@@ -52,7 +70,7 @@ int rating()
     int z2 = board[4]*board[2]*board[6];
     if(z1 == 27 || z2 == 27){return -10;}
     if(z1 == 125 || z2 == 125){return 10;}
-    return 0;
+    return poss_win();
 }
 int minimax(bool maximizer,int depth)
 {
