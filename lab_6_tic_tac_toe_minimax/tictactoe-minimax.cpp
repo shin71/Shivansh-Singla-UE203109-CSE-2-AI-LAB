@@ -155,7 +155,7 @@ void soln()
         }
         if(rating() == -10){cout<<"you won"<<endl;}
         if(rating() == 10){cout<<"computer won"<<endl;}
-        if(rating() != 0)
+        if(abs(rating()) == 10)
         {
             print_board();
             return;
