@@ -6,6 +6,8 @@ CSE 2
 <ul>
 <li> rating gives us the score 10 if the computer aka maximizer wins that is reaches a +10 leaf node</li>
 <li> rating gives us the score -10 if the user aka minimizer wins that is reaches a -10 leaf node</li>
+<li> rating gives us +8 if the call is made from maximizer and there is possible win for maximizer and not for minimizer</li>
+<li> rating gives us -8 if the call is made from minimizer and there is possible win for minimizer and not for maximizer</li>
 <li> rating returns 0 if no one wins or we finish early before reaching any depth node </li>
 </ul>
 
