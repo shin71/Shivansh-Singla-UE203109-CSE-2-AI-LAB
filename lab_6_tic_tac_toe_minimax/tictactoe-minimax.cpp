@@ -38,21 +38,41 @@ void user_move()
     cin>>position;
     board[position-1] = 3;
 }
-int rating()
+int check_win(int val_for_maximizer)
 {
     for(int i=0;i<3;i++)
     {
         int x = board[i*3] * board[i*3 + 1] * board[i*3 + 2];
         int y = board[i] * board[i + 3] * board[i + 6];
     
-        if(x == 27 || y==27){return -10;}
-        if(x == 125 || y==125){return 10;}
+        if(x == 27 || y==27){return -val_for_maximizer;}
+        if(x == 125 || y==125){return val_for_maximizer;}
     }
     int z1 = board[4]*board[0]*board[8];
     int z2 = board[4]*board[2]*board[6];
-    if(z1 == 27 || z2 == 27){return -10;}
-    if(z1 == 125 || z2 == 125){return 10;}
+    if(z1 == 27 || z2 == 27){return -val_for_maximizer;}
+    if(z1 == 125 || z2 == 125){return val_for_maximizer;}
     return 0;
+}
+int rating(int turn_char)
+{
+    int x = check_win(10);
+    if(x!=0){return x;}
+    int maxy = -10,miny = 10;
+    for(int i=0;i<=8;i++)
+    {
+        if(board[i]!=2){continue;}
+        board[i] = turn_char;
+        int r = check_win(8);
+        board[i] = 2;
+        maxy = max(r,maxy);
+        miny = min(r,miny);
+    }
+    if(turn_char == 3 && maxy == 8){return maxy;}
+    if(turn_char == 3 && maxy < 8){return miny;}
+    if(turn_char == 5 && miny==-8){return miny;}
+    if(turn_char == 5 && miny>-8){return maxy;}
+    
 }
 int minimax(bool maximizer,int depth)
 {
@@ -60,14 +80,14 @@ int minimax(bool maximizer,int depth)
     for(int i=0;i<=8;i++)
     {
         if(board[i]!=2){continue;}
-        con = false;
+        con = false;//means we have reached the leaf node
         break;
     }
-    if(con || depth==0)
-    {   //this means leaf node
-        return rating();
+    if(con){return check_win(10);}
+    if(depth==0)
+    {   int turn_char = ((!maximizer)*5) + (maximizer*3);//this tells where was the last call from
+        return rating(turn_char);
     }
-    
     if(maximizer)
     {
         int score = -10;
@@ -97,33 +117,29 @@ int minimax(bool maximizer,int depth)
 
 void comp_move(int depth)
 {
-    int op = -1;
+    pair<int,int> score_move = {-1000,-1000};
     for(int i=0;i<=8;i++)
     {
         if(board[i] != 2){continue;}
         board[i] = 5;
         int score = minimax(false,depth - 1);
         board[i] = 2;
-        if(score == 10)
-        {
-            board[i] = 5;
-            return;
-        }
-        if(score == 0){op = i;}
-        else if(score == -10 && op==-1){op  = i;}
+        score_move = max(score_move,make_pair(score,i));
     }
-    board[op] = 5; 
+    board[score_move.second] = 5; 
 }
 
 void soln()
 {
-    int depth;
     cout<<"enter depth"<<endl;
+    int depth;
     cin>>depth;
+    
     cout<<"computer will always play circle"<<endl;
     cout<<"Enter 0 if you want to play first else enter 1"<<endl;
     int start;
     cin>>start;
+    
     for(int turn = 1;turn<=9;turn++)
     {
         if(turn%2 == start)
@@ -134,9 +150,9 @@ void soln()
         {
             user_move();
         }
-        if(rating() == -10){cout<<"you won"<<endl;}
-        if(rating() == 10){cout<<"computer won"<<endl;}
-        if(rating() != 0)
+        if(check_win(10) == -10){cout<<"you won"<<endl;}
+        if(check_win(10) == 10){cout<<"computer won"<<endl;}
+        if(check_win(10) != 0 )
         {
             print_board();
             return;
