@@ -9,9 +9,9 @@ CSE 2
 <li> rating returns 0 if no one wins or we finish early before reaching any depth node </li>
 </ul>
 
-## dry runs at depth 1 to 4 on input 6 8 3 1 if possible
+## dry runs at depth 1 to 4 on input 6 8 1 3 if possible
 depth = 1<br>
-6 8 3 1 4 and draw
+6 8 1 3 2 and you won
 <pre>
 enter depth
 1
@@ -29,27 +29,27 @@ _ _ O
 enter your move here with 1 based indexing
 8
 _ _ _ 
-_ _ X 
+_ O X 
+_ X O 
+enter your move here with 1 based indexing
+1
+X _ _ 
+_ O X 
 O X O 
 enter your move here with 1 based indexing
 3
-_ _ X 
-_ O X 
+X _ X 
+O O X 
 O X O 
 enter your move here with 1 based indexing
-1
-X O X 
-_ O X 
+2
+you won
+X X X 
+O O X 
 O X O 
-enter your move here with 1 based indexing
-4
-X O X 
-X O X 
-O X O 
-it is a draw 
 </pre>
 depth=2<br>
-6 8 3 1 4 and it is a draw
+6 8 1 3 4 and it is a draw
 <pre>
 enter depth
 2
@@ -67,15 +67,15 @@ _ _ O
 enter your move here with 1 based indexing
 8
 _ _ _ 
-_ _ X 
-O X O 
+_ O X 
+_ X O 
 enter your move here with 1 based indexing
-3
-_ _ X 
+1
+X _ _ 
 _ O X 
 O X O 
 enter your move here with 1 based indexing
-1
+3
 X O X 
 _ O X 
 O X O 
