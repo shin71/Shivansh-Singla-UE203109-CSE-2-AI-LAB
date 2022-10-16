@@ -122,7 +122,7 @@ int minimax(bool maximizer,int depth,bool alpha_beta_pruning)
 void comp_move(int depth,bool alpha_beta_pruning)
 {
     calls++;
-    int op = -1;
+    pair<int,int> score_move = {-1000,-1000};
     for(int i=0;i<=8;i++)
     {
         if(board[i] != 2){continue;}
@@ -134,10 +134,9 @@ void comp_move(int depth,bool alpha_beta_pruning)
             board[i] = 5;
             return;
         }
-        if(score == 0){op = i;}
-        else if(score == -10 && op==-1){op  = i;}
+        score_move = max(score_move,make_pair(score,i));
     }
-    board[op] = 5; 
+    board[score_move.second] = 5; 
 }
 
 void soln()
