@@ -39,21 +39,41 @@ void user_move()
     cin>>position;
     board[position-1] = 3;
 }
-int rating()
+int check_win(int val_for_maximizer)
 {
     for(int i=0;i<3;i++)
     {
         int x = board[i*3] * board[i*3 + 1] * board[i*3 + 2];
         int y = board[i] * board[i + 3] * board[i + 6];
     
-        if(x == 27 || y==27){return -10;}
-        if(x == 125 || y==125){return 10;}
+        if(x == 27 || y==27){return -val_for_maximizer;}
+        if(x == 125 || y==125){return val_for_maximizer;}
     }
     int z1 = board[4]*board[0]*board[8];
     int z2 = board[4]*board[2]*board[6];
-    if(z1 == 27 || z2 == 27){return -10;}
-    if(z1 == 125 || z2 == 125){return 10;}
+    if(z1 == 27 || z2 == 27){return -val_for_maximizer;}
+    if(z1 == 125 || z2 == 125){return val_for_maximizer;}
     return 0;
+}
+int rating(int turn_char)
+{
+    int x = check_win(10);
+    if(x!=0){return x;}
+    int maxy = -10,miny = 10;
+    for(int i=0;i<=8;i++)
+    {
+        if(board[i]!=2){continue;}
+        board[i] = turn_char;
+        int r = check_win(8);
+        board[i] = 2;
+        maxy = max(r,maxy);
+        miny = min(r,miny);
+    }
+    if(turn_char == 3 && maxy == 8){return maxy;}
+    if(turn_char == 3 && maxy < 8){return miny;}
+    if(turn_char == 5 && miny==-8){return miny;}
+    if(turn_char == 5 && miny>-8){return maxy;}
+    
 }
 int minimax(bool maximizer,int depth,bool alpha_beta_pruning)
 {
@@ -67,7 +87,8 @@ int minimax(bool maximizer,int depth,bool alpha_beta_pruning)
     }
     if(con || depth==0)
     {   //this means leaf node or we reached our max depth allowed
-        return rating();
+        int turn_char = ((!maximizer)*5) + (maximizer*3);//this tells where was the last call from
+        return rating(turn_char);
     }
     if(maximizer)
     {
@@ -143,9 +164,9 @@ void soln()
         {
             user_move();
         }
-        if(rating() == -10){cout<<"you won"<<endl;}
-        if(rating() == 10){cout<<"computer won"<<endl;}
-        if(rating() != 0)
+        if(check_win(10) == -10){cout<<"you won"<<endl;}
+        if(check_win(10) == 10){cout<<"computer won"<<endl;}
+        if(check_win(10) != 0)
         {
             print_board();
             cout<<"calls to minimax function(inclusive of comp_move)"<<endl;
