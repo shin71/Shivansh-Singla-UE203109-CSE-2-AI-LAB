@@ -73,9 +73,9 @@ int rating(int turn_char)
     if(turn_char == 3 && maxy < 8){return miny;}
     if(turn_char == 5 && miny==-8){return miny;}
     if(turn_char == 5 && miny>-8){return maxy;}
-    return 0;
+    
 }
-int minimax(bool maximizer,int depth,bool alpha_beta_pruning,int alpha,int beta)
+int minimax(bool maximizer,int depth,bool alpha_beta_pruning)
 {
     calls++;
     bool con = true;
@@ -97,18 +97,10 @@ int minimax(bool maximizer,int depth,bool alpha_beta_pruning,int alpha,int beta)
         {
             if(board[i]!=2){continue;}
             board[i]  = 5;
-            score = max(score,minimax(false,depth - 1,alpha_beta_pruning,alpha,beta));
+            score = max(score,minimax(false,depth - 1,alpha_beta_pruning));
             board[i] = 2;
-            if(alpha_beta_pruning)
-            {
-                alpha = max(alpha,score);
-                if(alpha >= beta)
-                {
-                    return alpha;
-                }
-            }
+            if(score == 10 && alpha_beta_pruning){return score;}
         }
-        
         return score;
     }
     else
@@ -118,23 +110,16 @@ int minimax(bool maximizer,int depth,bool alpha_beta_pruning,int alpha,int beta)
         {
             if(board[i]!=2){continue;}
             board[i]  = 3;
-            score = min(score,minimax(true,depth - 1,alpha_beta_pruning,alpha,beta));
+            score = min(score,minimax(true,depth - 1,alpha_beta_pruning));
             board[i] = 2;
-            if(alpha_beta_pruning)
-            {
-                beta = min(beta,score);
-                if(alpha >= beta)
-                {
-                    return beta;
-                }
-            }
+            if(score == -10 && alpha_beta_pruning){return score;}
         }
         return score;
     }
 
 }
 
-void comp_move(int depth,bool alpha_beta_pruning,int alpha = -10,int beta = 10)
+void comp_move(int depth,bool alpha_beta_pruning)
 {
     calls++;
     pair<int,int> score_move = {-1000,-1000};
@@ -142,16 +127,12 @@ void comp_move(int depth,bool alpha_beta_pruning,int alpha = -10,int beta = 10)
     {
         if(board[i] != 2){continue;}
         board[i] = 5;
-        int score = minimax(false,depth - 1,alpha_beta_pruning,alpha,beta);
+        int score = minimax(false,depth - 1,alpha_beta_pruning);
         board[i] = 2;
-        if(alpha_beta_pruning)
+        if(score == 10)
         {
-            alpha = max(alpha,score);
-            if(alpha >= beta)
-            {
-                board[i] = 5;
-                return;
-            }
+            board[i] = 5;
+            return;
         }
         score_move = max(score_move,make_pair(score,i));
     }
