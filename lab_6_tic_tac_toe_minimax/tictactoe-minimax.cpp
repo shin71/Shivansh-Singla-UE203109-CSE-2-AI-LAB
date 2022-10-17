@@ -72,6 +72,7 @@ int rating(int turn_char)
     if(turn_char == 3 && maxy < 8){return miny;}
     if(turn_char == 5 && miny==-8){return miny;}
     if(turn_char == 5 && miny>-8){return maxy;}
+    return 0;
     
 }
 int minimax(bool maximizer,int depth)
