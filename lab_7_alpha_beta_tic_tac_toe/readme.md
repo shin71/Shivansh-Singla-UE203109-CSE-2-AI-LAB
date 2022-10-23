@@ -14,10 +14,10 @@ CSE 2
 <li>according to the response we will get the number of calls</li>
 </ul>
 
-## input move sequence - 1 2 7 6 9
+## input move sequence - 9 8 3 4 2
 ## depth - 100
 
-### naive minimax calls -> 55148
+### naive minimax calls -> 60692
 
 <pre>
 do you want alpha beta pruning enter 1 for yes
@@ -31,36 +31,36 @@ _ _ _
 _ _ _ 
 _ _ _ 
 enter your move here with 1 based indexing
-1
-X _ _ 
-_ O _ 
+9
 _ _ _ 
+_ O _ 
+_ _ X 
+enter your move here with 1 based indexing
+8
+_ _ _ 
+_ O _ 
+O X X 
+enter your move here with 1 based indexing
+3
+_ _ X 
+_ O O 
+O X X 
+enter your move here with 1 based indexing
+4
+O _ X 
+X O O 
+O X X 
 enter your move here with 1 based indexing
 2
-X X O 
-_ O _ 
-_ _ _ 
-enter your move here with 1 based indexing
-7
-X X O 
-O O _ 
-X _ _ 
-enter your move here with 1 based indexing
-6
-X X O 
-O O X 
-X _ O 
-enter your move here with 1 based indexing
-9
-X X O 
-O O X 
-X O X 
+O X X 
+X O O 
+O X X 
 it is a draw
-calls to minimax function(inclusive of comp_move)
-55148
+calls to minimax function
+60692
 </pre>
 
-### alpha_beta_pruning minimax calls -> 1868
+### alpha_beta_pruning minimax calls -> 4169
 
 <pre>
 do you want alpha beta pruning enter 1 for yes
@@ -74,31 +74,31 @@ _ _ _
 _ _ _ 
 _ _ _ 
 enter your move here with 1 based indexing
-1
-X _ _ 
-_ O _ 
+9
 _ _ _ 
+_ O _ 
+_ _ X 
+enter your move here with 1 based indexing
+8
+_ _ _ 
+_ O _ 
+O X X 
+enter your move here with 1 based indexing
+3
+_ _ X 
+_ O O 
+O X X 
+enter your move here with 1 based indexing
+4
+O _ X 
+X O O 
+O X X 
 enter your move here with 1 based indexing
 2
-X X O 
-_ O _ 
-_ _ _ 
-enter your move here with 1 based indexing
-7
-X X O 
-O O _ 
-X _ _ 
-enter your move here with 1 based indexing
-6
-X X O 
-O O X 
-X O _ 
-enter your move here with 1 based indexing
-9
-X X O 
-O O X 
-X O X 
+O X X 
+X O O 
+O X X 
 it is a draw
-calls to minimax function(inclusive of comp_move)
-1868
+calls to minimax function
+4169
 </pre>
