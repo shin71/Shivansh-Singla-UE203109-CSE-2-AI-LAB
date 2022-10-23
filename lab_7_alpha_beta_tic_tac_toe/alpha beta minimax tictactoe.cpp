@@ -39,45 +39,28 @@ void user_move()
     cin>>position;
     board[position-1] = 3;
 }
-int check_win(int val_for_maximizer)
+int check_win()
 {
     for(int i=0;i<3;i++)
     {
         int x = board[i*3] * board[i*3 + 1] * board[i*3 + 2];
         int y = board[i] * board[i + 3] * board[i + 6];
     
-        if(x == 27 || y==27){return -val_for_maximizer;}
-        if(x == 125 || y==125){return val_for_maximizer;}
+        if(x == 27 || y==27){return -10;}
+        if(x == 125 || y==125){return 10;}
     }
     int z1 = board[4]*board[0]*board[8];
     int z2 = board[4]*board[2]*board[6];
-    if(z1 == 27 || z2 == 27){return -val_for_maximizer;}
-    if(z1 == 125 || z2 == 125){return val_for_maximizer;}
+    if(z1 == 27 || z2 == 27){return -10;}
+    if(z1 == 125 || z2 == 125){return 10;}
     return 0;
 }
-int rating(int turn_char)
-{
-    int x = check_win(10);
-    if(x!=0){return x;}
-    int maxy = -10,miny = 10;
-    for(int i=0;i<=8;i++)
-    {
-        if(board[i]!=2){continue;}
-        board[i] = turn_char;
-        int r = check_win(8);
-        board[i] = 2;
-        maxy = max(r,maxy);
-        miny = min(r,miny);
-    }
-    if(turn_char == 3 && maxy == 8){return maxy;}
-    if(turn_char == 3 && maxy < 8){return miny;}
-    if(turn_char == 5 && miny==-8){return miny;}
-    if(turn_char == 5 && miny>-8){return maxy;}
-    
-}
-int minimax(bool maximizer,int depth,bool alpha_beta_pruning)
+
+pii minimax(bool maximizer,int alpha,int beta,int depth,bool alpha_beta_pruning)
 {
     calls++;
+    //this means someone has won i.e we have reached a leaf node
+    if(check_win()!=0){return make_pair(check_win(),-1);}
     bool con = true;
     for(int i=0;i<=8;i++)
     {
@@ -87,56 +70,46 @@ int minimax(bool maximizer,int depth,bool alpha_beta_pruning)
     }
     if(con || depth==0)
     {   //this means leaf node or we reached our max depth allowed
-        int turn_char = ((!maximizer)*5) + (maximizer*3);//this tells where was the last call from
-        return rating(turn_char);
+        return make_pair(check_win(),-1);
     }
+    
     if(maximizer)
     {
-        int score = -10;
-        for(int i=0;i<=8;i++)
+        int fin_mov = -1;
+        for(int i=0;i<9;i++)
         {
             if(board[i]!=2){continue;}
-            board[i]  = 5;
-            score = max(score,minimax(false,depth - 1,alpha_beta_pruning));
+            board[i] = 5;
+            auto [score,move] = minimax(false,alpha,beta,depth-1,alpha_beta_pruning);
             board[i] = 2;
-            if(score == 10 && alpha_beta_pruning){return score;}
+            if(score > alpha){fin_mov = i;}
+            alpha = max(alpha,score);
+            if((alpha >= beta) && alpha_beta_pruning)
+            {
+                return make_pair(alpha,fin_mov);
+            }
         }
-        return score;
+        return make_pair(alpha,fin_mov);
     }
     else
     {
-        int score = 10;
-        for(int i=0;i<=8;i++)
+        int fin_mov = -1;
+        for(int i=0;i<9;i++)
         {
             if(board[i]!=2){continue;}
-            board[i]  = 3;
-            score = min(score,minimax(true,depth - 1,alpha_beta_pruning));
+            board[i] = 3;
+            auto [score,move] = minimax(true,alpha,beta,depth-1,alpha_beta_pruning);
             board[i] = 2;
-            if(score == -10 && alpha_beta_pruning){return score;}
+            if(score < beta){fin_mov = i;}
+            beta = min(beta,score);
+            if((alpha >= beta) && alpha_beta_pruning)
+            {
+                return make_pair(beta,fin_mov);
+            }
         }
-        return score;
+        return make_pair(beta,fin_mov);
     }
-
-}
-
-void comp_move(int depth,bool alpha_beta_pruning)
-{
-    calls++;
-    pair<int,int> score_move = {-1000,-1000};
-    for(int i=0;i<=8;i++)
-    {
-        if(board[i] != 2){continue;}
-        board[i] = 5;
-        int score = minimax(false,depth - 1,alpha_beta_pruning);
-        board[i] = 2;
-        if(score == 10)
-        {
-            board[i] = 5;
-            return;
-        }
-        score_move = max(score_move,make_pair(score,i));
-    }
-    board[score_move.second] = 5; 
+    
 }
 
 void soln()
@@ -157,25 +130,25 @@ void soln()
     {
         if(turn%2 == start)
         {
-            comp_move(depth,alpha_beta_pruning);
+            board[minimax(true,-10,10,depth,alpha_beta_pruning).second] = 5;
         }
         else
         {
             user_move();
         }
-        if(check_win(10) == -10){cout<<"you won"<<endl;}
-        if(check_win(10) == 10){cout<<"computer won"<<endl;}
-        if(check_win(10) != 0)
+        if(check_win() == -10){cout<<"you won"<<endl;}
+        if(check_win() == 10){cout<<"computer won"<<endl;}
+        if(check_win() != 0)
         {
             print_board();
-            cout<<"calls to minimax function(inclusive of comp_move)"<<endl;
+            cout<<"calls to minimax function"<<endl;
             cout<<calls<<endl;
             return;
         }
     }
     print_board();
     cout<<"it is a draw"<<endl;
-    cout<<"calls to minimax function(inclusive of comp_move)"<<endl;
+    cout<<"calls to minimax function"<<endl;
     cout<<calls<<endl;
 }
 
