@@ -85,7 +85,7 @@ int minimax(bool maximizer,int depth)
         break;
     }
     if(con){return check_win(10);}
-    if(depth==0)
+    if(depth==0 || check_win(10)!=0)
     {   int turn_char = ((!maximizer)*5) + (maximizer*3);//this tells where was the last call from
         return rating(turn_char);
     }
