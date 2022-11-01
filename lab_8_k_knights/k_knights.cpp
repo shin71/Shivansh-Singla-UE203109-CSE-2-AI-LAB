@@ -21,7 +21,7 @@ vector<int> dy = {+1,-1};
 int n,m,k;
 int ans = 0;
 bool print = false;
-void place(int curr_row,int curr_col,int k,auto &board)
+void place(int curr_row,int curr_col,int k,vector<vector<char>> &board)
 {
     if(k == 0)
     {
