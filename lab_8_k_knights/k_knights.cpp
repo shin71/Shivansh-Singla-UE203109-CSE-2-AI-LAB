@@ -2,6 +2,7 @@
     UE203109
     CSE 2*/
 #include <iostream>
+#include<chrono>
 #include <vector>
 #define IOS ios_base::sync_with_stdio(0); cin.tie(0);
 #define endl "\n"
@@ -19,20 +20,21 @@ vector<int> dx = {+2,-2};
 vector<int> dy = {+1,-1};
 int n,m,k;
 int ans = 0;
+bool print = false;
 void place(int curr_row,int curr_col,int k,auto &board)
 {
     if(k == 0)
     {
         ans++;
-        for(int i=2;i<=n+1;i++)
+        for(int i=2;i<=n+1 && print;i++)
         {
-            for(int j=2;j<=m+1;j++)
+            for(int j=2;j<=m+1 && print;j++)
             {
-                cout<<board[i][j]<<" ";
+                cout<<(board[i][j] == 'K' ? 'K':'E')<<" ";
             }
             cout<<endl;
         }
-        cout<<"......"<<endl;
+        if(print){cout<<"......"<<endl;}
         return;
     }
     for(int i = curr_row;i<=n+1;i++)
@@ -58,8 +60,7 @@ void place(int curr_row,int curr_col,int k,auto &board)
 }
 void soln()
 {
-    cout<<"enter board dimensions n*m and k i.e number of knights"<<endl;
-    cin>>n>>m>>k;
+    
     vector<vector<char>> board(n+4,vector<char>(m+4,'E'));
     place(2,2,k,board);
     
@@ -76,10 +77,18 @@ signed main() {
 IOS
 ll t;
 t=1;
-//cin>>t;  
+//cin>>t;
+cout<<"enter board dimensions n*m and k i.e number of knights"<<endl;
+cin>>n>>m>>k;
+cout<<"do you want to print enter 1 for yes and 0 for no"<<endl;
+cin>>print;
+auto start = std::chrono::high_resolution_clock::now();
 while(t--)  
 {
  soln();  
 }
+auto end = chrono::high_resolution_clock::now();
+auto duration = chrono::duration_cast<std::chrono::nanoseconds>(end - start);
+cout << "Time taken : " << ((long double)duration.count())/((long double) 1e9) <<"s "<< endl;
 return 0;
 }
