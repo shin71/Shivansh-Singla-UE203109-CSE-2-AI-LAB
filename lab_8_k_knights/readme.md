@@ -12,167 +12,311 @@ CSE 2
   <li>Actual board start row 2 to n+1 and col 2 to m+1</li>
 </ul>
 
+## note - i am running these programs using -O3 flag in compilation command which improves runtime a lot
+
+## eg - n=m=6,k=17 without prints takes 40 seconds to run without any optimization flag whereas it takes only 0.7 seconds on -O3 flag
+ 
 ## some runs with and without prints time is given at end of a run with number of configs
+<br>
+with prints
 <pre>
 enter board dimensions n*m and k i.e number of knights
-8 8 4
+6 6 17
 do you want to print enter 1 for yes and 0 for no
 0
 number of possible configs are:
-376560
-Time taken : 2.98748s 
+40
+Time taken : 0.744675s 
 </pre>
+<br>
+with prints
 <br>
 <pre>
 enter board dimensions n*m and k i.e number of knights
-3 3 3
+6 6 17
 do you want to print enter 1 for yes and 0 for no
 1
-K K K 
-E E E 
-E E E 
+K K E K E K 
+K E E E K E 
+E E E K E K 
+K E K E K E 
+E K E K E K 
+K E K E K E 
 ......
-K K E 
-K E E 
-E E E 
+K E K E K K 
+E K E E E K 
+K E K E E E 
+E K E K E K 
+K E K E K E 
+E K E K E K 
 ......
-K K E 
-E K E 
-E E E 
+K E K E K E 
+E K E K E K 
+K E K E K E 
+E K E K E K 
+K E K E K E 
+E K E K E E 
 ......
-K E K 
-E K E 
-E E E 
+K E K E K E 
+E K E K E K 
+K E K E K E 
+E K E K E K 
+K E K E K E 
+E K E E E K 
 ......
-K E K 
-E E E 
-K E E 
+K E K E K E 
+E K E K E K 
+K E K E K E 
+E K E K E K 
+K E K E K E 
+E E E K E K 
 ......
-K E K 
-E E E 
-E E K 
+K E K E K E 
+E K E K E K 
+K E K E K E 
+E K E K E K 
+K E K E E E 
+E K E K E K 
 ......
-K E E 
-K K E 
-E E E 
+K E K E K E 
+E K E K E K 
+K E K E K E 
+E K E K E K 
+K E E E K E 
+E K E K E K 
 ......
-K E E 
-K E E 
-K E E 
+K E K E K E 
+E K E K E K 
+K E K E K E 
+E K E K E K 
+E E K E K E 
+E K E K E K 
 ......
-K E E 
-E K E 
-K E E 
+K E K E K E 
+E K E K E K 
+K E K E K E 
+E K E K E E 
+K E K E K E 
+E K E K E K 
 ......
-K E E 
-E K E 
-E E K 
+K E K E K E 
+E K E K E K 
+K E K E K E 
+E K E E E K 
+K E K E K E 
+E K E K E K 
 ......
-K E E 
-E E E 
-K E K 
+K E K E K E 
+E K E K E K 
+K E K E K E 
+E E E K E K 
+K E K E K E 
+E K E K E K 
 ......
-E K K 
-E K E 
-E E E 
+K E K E K E 
+E K E K E K 
+K E K E K E 
+E E E K E K 
+K E E E K E 
+K K E K E K 
 ......
-E K K 
-E E K 
-E E E 
+K E K E K E 
+E K E K E K 
+K E K E E E 
+E K E K E K 
+K E K E K E 
+E K E K E K 
 ......
-E K E 
-K K E 
-E E E 
+K E K E K E 
+E K E K E K 
+K E E E K E 
+E K E K E K 
+K E K E K E 
+E K E K E K 
 ......
-E K E 
-K E K 
-E E E 
+K E K E K E 
+E K E K E K 
+E E K E K E 
+E K E K E K 
+K E K E K E 
+E K E K E K 
 ......
-E K E 
-K E E 
-E K E 
+K E K E K E 
+E K E K E E 
+K E K E K E 
+E K E K E K 
+K E K E K E 
+E K E K E K 
 ......
-E K E 
-E K K 
-E E E 
+K E K E K E 
+E K E E E K 
+K E K E K E 
+E K E K E K 
+K E K E K E 
+E K E K E K 
 ......
-E K E 
-E K E 
-E K E 
+K E K E K E 
+E E E K E K 
+K E K E K E 
+E K E K E K 
+K E K E K E 
+E K E K E K 
 ......
-E K E 
-E E K 
-E K E 
+K E K E E E 
+E K E K E K 
+K E K E K E 
+E K E K E K 
+K E K E K E 
+E K E K E K 
 ......
-E E K 
-E K K 
-E E E 
+K E E E K E 
+E K E K E K 
+K E K E K E 
+E K E K E K 
+K E K E K E 
+E K E K E K 
 ......
-E E K 
-E K E 
-K E E 
+E K E K E K 
+K E K E K E 
+E K E K E K 
+K E K E K E 
+E K E K E K 
+K E K E E E 
 ......
-E E K 
-E K E 
-E E K 
+E K E K E K 
+K E K E K E 
+E K E K E K 
+K E K E K E 
+E K E K E K 
+K E E E K E 
 ......
-E E K 
-E E K 
-E E K 
+E K E K E K 
+K E K E K E 
+E K E K E K 
+K E K E K E 
+E K E K E K 
+E E K E K E 
 ......
-E E K 
-E E E 
-K E K 
+E K E K E K 
+K E K E K E 
+E K E K E K 
+K E K E K E 
+E K E K E E 
+K E K E K E 
 ......
-E E E 
-K K K 
-E E E 
+E K E K E K 
+K E K E K E 
+E K E K E K 
+K E K E K E 
+E K E E E K 
+K E K E K E 
 ......
-E E E 
-K K E 
-K E E 
+E K E K E K 
+K E K E K E 
+E K E K E K 
+K E K E K E 
+E E E K E K 
+K E K E K E 
 ......
-E E E 
-K K E 
-E K E 
+E K E K E K 
+K E K E K E 
+E K E K E K 
+K E K E E E 
+E K E K E K 
+K E K E K E 
 ......
-E E E 
-K E K 
-E K E 
+E K E K E K 
+K E K E K E 
+E K E K E K 
+K E K E E E 
+E K E E E K 
+K E K E K K 
 ......
-E E E 
-K E E 
-K K E 
+E K E K E K 
+K E K E K E 
+E K E K E K 
+K E E E K E 
+E K E K E K 
+K E K E K E 
 ......
-E E E 
-E K K 
-E K E 
+E K E K E K 
+K E K E K E 
+E K E K E K 
+E E K E K E 
+E K E K E K 
+K E K E K E 
 ......
-E E E 
-E K K 
-E E K 
+E K E K E K 
+K E K E K E 
+E K E K E E 
+K E K E K E 
+E K E K E K 
+K E K E K E 
 ......
-E E E 
-E K E 
-K K E 
+E K E K E K 
+K E K E K E 
+E K E E E K 
+K E K E K E 
+E K E K E K 
+K E K E K E 
 ......
-E E E 
-E K E 
-K E K 
+E K E K E K 
+K E K E K E 
+E E E K E K 
+K E K E K E 
+E K E K E K 
+K E K E K E 
 ......
-E E E 
-E K E 
-E K K 
+E K E K E K 
+K E K E E E 
+E K E K E K 
+K E K E K E 
+E K E K E K 
+K E K E K E 
 ......
-E E E 
-E E K 
-E K K 
+E K E K E K 
+K E E E K E 
+E K E K E K 
+K E K E K E 
+E K E K E K 
+K E K E K E 
 ......
-E E E 
-E E E 
-K K K 
+E K E K E K 
+E E K E K E 
+E K E K E K 
+K E K E K E 
+E K E K E K 
+K E K E K E 
+......
+E K E K E E 
+K E K E K E 
+E K E K E K 
+K E K E K E 
+E K E K E K 
+K E K E K E 
+......
+E K E E E K 
+K E K E K E 
+E K E K E K 
+K E K E K E 
+E K E K E K 
+K E K E K E 
+......
+E E K E K E 
+E K E K E K 
+K E K E K E 
+E K E K E K 
+K E K E K E 
+E K E K E K 
+......
+E E E K E K 
+K E K E K E 
+E K E K E K 
+K E K E K E 
+E K E K E K 
+K E K E K E 
 ......
 number of possible configs are:
-36
-Time taken : 0.004235s 
+40
+Time taken : 1.31622s 
 </pre>
