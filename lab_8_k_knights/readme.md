@@ -16,7 +16,7 @@ CSE 2
 
 ### eg - n=m=6,k=17 without prints takes 40 seconds to run without any optimization flag whereas it takes only 0.7 seconds on -O3 flag
 
-### n=m=8,k=31 is unable to give any solution due to memory and time constraints so using n=m=8,k=5 without prints because there are a lot of configs
+### n=m=8,k=31 is unable to give any solution due to memory and time constraints so using n=m=8,k=6 without prints because there are a lot of configs
  
 ### some runs with and without prints time is given at end of a run with number of configs
 <br>
@@ -33,6 +33,15 @@ Time taken : 0.744675s
 <br>
 with prints
 <br>
+<pre>
+enter board dimensions n*m and k i.e number of knights
+8 8 6
+do you want to print enter 1 for yes and 0 for no
+0
+number of possible configs are:
+20202298
+Time taken : 37.3208s 
+</pre>
 <pre>
 enter board dimensions n*m and k i.e number of knights
 6 6 17
