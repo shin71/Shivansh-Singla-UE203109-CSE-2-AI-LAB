@@ -18,7 +18,7 @@ CSE 2
  
 ## some runs with and without prints time is given at end of a run with number of configs
 <br>
-with prints
+without prints
 <pre>
 enter board dimensions n*m and k i.e number of knights
 6 6 17
