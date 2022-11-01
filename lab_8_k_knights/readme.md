@@ -23,6 +23,15 @@ CSE 2
 without prints
 <pre>
 enter board dimensions n*m and k i.e number of knights
+8 8 6
+do you want to print enter 1 for yes and 0 for no
+0
+number of possible configs are:
+20202298
+Time taken : 37.3208s 
+</pre>
+<pre>
+enter board dimensions n*m and k i.e number of knights
 6 6 17
 do you want to print enter 1 for yes and 0 for no
 0
@@ -33,15 +42,6 @@ Time taken : 0.744675s
 <br>
 with prints
 <br>
-<pre>
-enter board dimensions n*m and k i.e number of knights
-8 8 6
-do you want to print enter 1 for yes and 0 for no
-0
-number of possible configs are:
-20202298
-Time taken : 37.3208s 
-</pre>
 <pre>
 enter board dimensions n*m and k i.e number of knights
 6 6 17
