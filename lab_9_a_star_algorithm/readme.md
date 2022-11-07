@@ -29,7 +29,6 @@ vector<vector<int>> graph ={{0, 6, 3, 1, 0, 0, 0, 0, 0, 0},
         {0, 0, 0, 0, 9, 9, 11, 0, 14, 15}, 
         {0, 0, 0, 0, 0, 0, 12, 14, 0, 0}, 
         {0, 0, 0, 0, 0, 0, 14, 15, 0, 0}};
-    
     adj = vector<vector<pii>> (graph.size() + 1);
     for(int i=0;i<graph.size();i++)
     {
