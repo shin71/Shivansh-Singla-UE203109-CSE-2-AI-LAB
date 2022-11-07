@@ -16,7 +16,8 @@ CSE 2
 
 ## my code also has interactive version which i have commented out
 
-hardcoded graph and heuristics with conversion process to adj list
+#### hardcoded graph and heuristics with conversion process to adj list
+
 <pre>
 vector<vector<int>> graph ={{0, 6, 3, 1, 0, 0, 0, 0, 0, 0}, 
         {6, 0, 2, 6, 3, 4, 0, 0, 0, 0}, 
@@ -41,7 +42,8 @@ vector<vector<int>> graph ={{0, 6, 3, 1, 0, 0, 0, 0, 0, 0},
     h = {{1,15},{2,13},{3,13},{4,12},{5,10},{6,9},{7,7},{8,6},{9,5},{10,0}};
 </pre>
 
-output of hard coded code
+### output of hard coded code
+
 <pre>
 path found
 10<-7<-4<-1
