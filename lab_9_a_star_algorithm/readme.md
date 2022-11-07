@@ -18,7 +18,7 @@ CSE 2
 
 #### hardcoded graph and heuristics with conversion process to adj list
 
-<pre>
+<blink>
 vector<vector<int>> graph ={{0, 6, 3, 1, 0, 0, 0, 0, 0, 0}, 
         {6, 0, 2, 6, 3, 4, 0, 0, 0, 0}, 
         {3, 2, 0, 0, 4, 5, 0, 0, 0, 0}, 
@@ -30,7 +30,7 @@ vector<vector<int>> graph ={{0, 6, 3, 1, 0, 0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0, 0, 12, 14, 0, 0}, 
         {0, 0, 0, 0, 0, 0, 14, 15, 0, 0}};
     
-    "adj = vector<vector<pii>> (graph.size() + 1);"
+    adj = vector<vector<pii>> (graph.size() + 1);
     for(int i=0;i<graph.size();i++)
     {
         for(int j=0;j<graph.size();j++)
@@ -40,7 +40,7 @@ vector<vector<int>> graph ={{0, 6, 3, 1, 0, 0, 0, 0, 0, 0},
         }
     }
     h = {{1,15},{2,13},{3,13},{4,12},{5,10},{6,9},{7,7},{8,6},{9,5},{10,0}};
-</pre>
+</blink>
 
 ### output of hard coded code
 
