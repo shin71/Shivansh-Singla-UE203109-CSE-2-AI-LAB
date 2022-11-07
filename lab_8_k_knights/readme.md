@@ -17,7 +17,8 @@ CSE 2
 ### eg - n=m=6,k=17 without prints takes 40 seconds to run without any optimization flag whereas it takes only 0.7 seconds on -O3 flag
 
 <!--### n=m=8,k=31 is unable to give any solution due to memory and time constraints so using n=m=8,k=6 without prints because there are a lot of configs-->
- 
+### lot of configs in 8 8 6 so unable to print that many
+
 ### some runs with and without prints time is given at end of a run with number of configs
 <br>
 without prints
