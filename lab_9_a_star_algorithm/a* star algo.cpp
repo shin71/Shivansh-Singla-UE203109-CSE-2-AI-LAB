@@ -1,4 +1,10 @@
-#include <bits/stdc++.h>
+/* Shivansh Singla
+    UE203109
+    CSE 2*/
+#include <iostream>
+#include <map>
+#include <vector>
+#include <set>
 #define IOS ios_base::sync_with_stdio(0); cin.tie(0);
 #define endl "\n"
 #define output(a) cout<<a<<endl;
@@ -84,6 +90,7 @@ void a_star_algo(int start,int goal)
         closed.insert(curr);
 
     } 
+    cout<<"path not found"<<endl;
 
 }
 void soln()
