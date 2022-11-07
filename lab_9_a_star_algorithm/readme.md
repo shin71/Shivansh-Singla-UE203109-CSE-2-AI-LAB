@@ -12,4 +12,4 @@ CSE 2
 
 ## heuristic values
 
-![alt text][Agraph.jpg "the heuristic values"]
+![alt text1][Agraph.jpg "the heuristic values"]
