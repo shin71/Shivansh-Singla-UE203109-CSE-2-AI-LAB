@@ -65,11 +65,15 @@ void soln()
     for(int i=1;i<=4;i++)
     {
         cout<<"\nS"<<i<<endl;
+        mean=0;
         for(auto j:s[i])
         {
             cout<<j<<" ";
+            mean+=j;
         }
         cout<<endl;
+        cout<<"mean of S"<<i<<endl;
+        cout<<mean/s[i].size()<<endl;
     }
 }
 
