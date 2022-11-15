@@ -23,38 +23,41 @@ void soln()
     cin>>l>>r;
     cout<<"give size of series"<<endl;
     cin>>n;
-    cout<<"give seed value"<<endl;
-    cin>>seed;
-    vector<int> source(n);
-    srand(seed);
+    vector<double> source(n);
     for(auto &i:source)
     {
         i = rand()%(r - l + 1);
         i+=l;
     }
-    vector<int> s[5];
+    cout<<"enter no of seeds"<<endl;
+    cin>>seed;
+    vector<int> s[seed + 1];
+    cout<<"enter the seeds"<<endl;
+    for(int i=1;i<=seed;i++)
+    {
+        int x;cin>>x;s[i].push_back(x);
+    }
     cout<<"give number of epochs"<<endl;
     cin>>epochs;
     while(epochs--)
     {
-        bool first = false;
-        for(int i=1;i<=n;i++)
-        {
-            for(int j=1;j<=4;j++)
-            {
-                if(!first)
-                {
-                    s[j].push_back(source[rand()%100]);
-                }
-                else
-                {
-                    s[j][s[j].size() - 1]  = (s[j][s[j].size() - 1] + source[rand()%100])/2;
-                }
-
-            }
-            first = true;
-        }
-
+        vector<int> sum(seed + 1);
+        auto elements_at = sum;
+       for(int i=0;i<n;i++)
+       {
+           pii miny = {INT_MAX,-1};
+           for(int j=1;j<=seed;j++)
+           {
+               miny = min(miny,{abs(s[j].back() - source[i]),j});
+           }
+           auto [closest,index] = miny;
+           sum[index] += source[index];
+           elements_at[index]++;
+       }
+       for(int j=1;j<=seed;j++)
+       {
+           s[j].push_back((sum[j] + s[j].back())/elements_at[j]);
+       }
     }
     int mean = 0;
     cout<<"\noriginal array"<<endl;
@@ -62,18 +65,16 @@ void soln()
     cout<<"\nmean of original array"<<endl;
     cout<<(mean)/n<<endl;
 
-    for(int i=1;i<=4;i++)
+    for(int i=1;i<=seed;i++)
     {
         cout<<"\nS"<<i<<endl;
-        mean=0;
         for(auto j:s[i])
         {
             cout<<j<<" ";
-            mean+=j;
         }
         cout<<endl;
-        cout<<"mean of S"<<i<<endl;
-        cout<<mean/s[i].size()<<endl;
+        cout<<"final mean of S"<<i<<endl;
+        cout<<s[i].back()<<endl;
     }
 }
 
