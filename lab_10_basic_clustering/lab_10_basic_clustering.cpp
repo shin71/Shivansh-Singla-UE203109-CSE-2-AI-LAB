@@ -51,12 +51,12 @@ void soln()
                miny = min(miny,{abs(s[j].back() - source[i]),j});
            }
            auto [closest,index] = miny;
-           sum[index] += source[index];
+           sum[index] += source[i];
            elements_at[index]++;
        }
        for(int j=1;j<=seed;j++)
        {
-           s[j].push_back((sum[j] + s[j].back())/elements_at[j]);
+           s[j].push_back((sum[j] + s[j].back())/(1 + elements_at[j]));
        }
     }
     double mean = 0;
@@ -64,7 +64,7 @@ void soln()
     for(auto i:source){cout<<i<<" ";mean+=i;}
     cout<<"\nmean of original array"<<endl;
     cout<<(mean)/n<<endl;
-    cout<<"values of S[i] through all the epochs first element is the seed given""<<endl;
+    cout<<"values of S[i] through all the epochs first element is the seed given"<<endl;
     for(int i=1;i<=seed;i++)
     {
         cout<<"\nS"<<i<<endl;
@@ -73,7 +73,7 @@ void soln()
             cout<<j<<" ";
         }
         cout<<endl;
-        cout<<"final mean of S"<<i<<endl;
+        cout<<"final mean of S"<<i<<endl<<endl;
         cout<<s[i].back()<<endl;
     }
 }
