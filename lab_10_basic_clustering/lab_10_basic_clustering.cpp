@@ -73,7 +73,7 @@ void soln()
             cout<<j<<" ";
         }
         cout<<endl;
-        cout<<"final mean of S"<<i<<endl<<endl;
+        cout<<"final mean of S"<<i<<endl;
         cout<<s[i].back()<<endl;
     }
 }
@@ -93,7 +93,7 @@ int x = t;
 while(t--)  
 {
  soln();
- cout<<"test case "<<x - t<<" complete"<<endl;  
+ cout<<"test case "<<x - t<<" complete"<<endl<<endl;  
 }
 return 0;
 }
