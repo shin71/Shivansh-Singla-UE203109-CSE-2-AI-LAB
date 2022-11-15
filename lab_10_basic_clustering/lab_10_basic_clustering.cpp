@@ -12,7 +12,7 @@
 #define all(v) v.begin(), v.end()
 #define yes cout<<"YES"<<endl;return;
 #define no cout<<"NO"<<endl;return;
-#define pii pair<int,int>
+#define pii pair<double,double>
 using ll = long long;
 const ll MOD = 1e9 + 7;
 using namespace std;
@@ -26,22 +26,22 @@ void soln()
     vector<double> source(n);
     for(auto &i:source)
     {
-        i = rand()%(r - l + 1);
+        i = rand()%double(r - l + 1);
         i+=l;
     }
     cout<<"enter no of seeds"<<endl;
     cin>>seed;
-    vector<int> s[seed + 1];
+    vector<double> s[seed + 1];
     cout<<"enter the seeds"<<endl;
     for(int i=1;i<=seed;i++)
     {
-        int x;cin>>x;s[i].push_back(x);
+        double x;cin>>x;s[i].push_back(x);
     }
     cout<<"give number of epochs"<<endl;
     cin>>epochs;
     while(epochs--)
     {
-        vector<int> sum(seed + 1);
+        vector<double> sum(seed + 1,0);
         auto elements_at = sum;
        for(int i=0;i<n;i++)
        {
@@ -59,7 +59,7 @@ void soln()
            s[j].push_back((sum[j] + s[j].back())/elements_at[j]);
        }
     }
-    int mean = 0;
+    double mean = 0;
     cout<<"\noriginal array"<<endl;
     for(auto i:source){cout<<i<<" ";mean+=i;}
     cout<<"\nmean of original array"<<endl;
