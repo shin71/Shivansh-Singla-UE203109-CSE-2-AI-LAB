@@ -64,7 +64,7 @@ void soln()
     for(auto i:source){cout<<i<<" ";mean+=i;}
     cout<<"\nmean of original array"<<endl;
     cout<<(mean)/n<<endl;
-
+    cout<<"values of S[i] through all the epochs first element is the seed given""<<endl;
     for(int i=1;i<=seed;i++)
     {
         cout<<"\nS"<<i<<endl;
