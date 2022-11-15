@@ -26,7 +26,7 @@ void soln()
     vector<double> source(n);
     for(auto &i:source)
     {
-        i = rand()%double(r - l + 1);
+        i = rand()%(r - l + 1);
         i+=l;
     }
     cout<<"enter no of seeds"<<endl;
