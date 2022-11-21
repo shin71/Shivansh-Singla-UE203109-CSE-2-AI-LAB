@@ -96,15 +96,15 @@ void soln()
     }
     cout<<endl;
     cout<<"adam optimized series"<<endl;
-    double epsilon = 0.5,alpha = 0.01;
+    double epsilon = 1,alpha = 0.1;
     for(int i=0;i<n;i++)
     {
         double dx2dt2,dxdt;
-        if(i<=0){dxdt = 0;}
+        if(i<=0){dxdt = 0.0;}
         else{dxdt = grad[i-1];}
-        if(i<=1){dx2dt2 = 0;}
+        if(i<=1){dx2dt2 = 0.0;}
         else{dx2dt2 = lap[i-2];}
-        cout<<series[i] - (alpha*abs(dxdt))/(sqrt(dx2dt2) + epsilon)<<" ";
+        cout<<series[i] - (alpha*abs(dxdt))/(sqrt(abs(dx2dt2)) + epsilon)<<" ";
     }
     cout<<endl;
 }
